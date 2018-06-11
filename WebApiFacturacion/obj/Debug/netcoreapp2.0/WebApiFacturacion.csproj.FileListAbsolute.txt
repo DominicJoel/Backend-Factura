@@ -1,0 +1,11 @@
+C:\Users\d.minaya\Desktop\Programacion3\WebApiFacturacion\WebApiFacturacion\bin\Debug\netcoreapp2.0\WebApiFacturacion.deps.json
+C:\Users\d.minaya\Desktop\Programacion3\WebApiFacturacion\WebApiFacturacion\bin\Debug\netcoreapp2.0\WebApiFacturacion.runtimeconfig.json
+C:\Users\d.minaya\Desktop\Programacion3\WebApiFacturacion\WebApiFacturacion\bin\Debug\netcoreapp2.0\WebApiFacturacion.runtimeconfig.dev.json
+C:\Users\d.minaya\Desktop\Programacion3\WebApiFacturacion\WebApiFacturacion\bin\Debug\netcoreapp2.0\WebApiFacturacion.dll
+C:\Users\d.minaya\Desktop\Programacion3\WebApiFacturacion\WebApiFacturacion\bin\Debug\netcoreapp2.0\WebApiFacturacion.pdb
+C:\Users\d.minaya\Desktop\Programacion3\WebApiFacturacion\WebApiFacturacion\obj\Debug\netcoreapp2.0\WebApiFacturacion.csproj.CoreCompileInputs.cache
+C:\Users\d.minaya\Desktop\Programacion3\WebApiFacturacion\WebApiFacturacion\obj\Debug\netcoreapp2.0\WebApiFacturacion.AssemblyInfoInputs.cache
+C:\Users\d.minaya\Desktop\Programacion3\WebApiFacturacion\WebApiFacturacion\obj\Debug\netcoreapp2.0\WebApiFacturacion.AssemblyInfo.cs
+C:\Users\d.minaya\Desktop\Programacion3\WebApiFacturacion\WebApiFacturacion\obj\Debug\netcoreapp2.0\WebApiFacturacion.dll
+C:\Users\d.minaya\Desktop\Programacion3\WebApiFacturacion\WebApiFacturacion\obj\Debug\netcoreapp2.0\WebApiFacturacion.pdb
+C:\Users\d.minaya\Desktop\Programacion3\WebApiFacturacion\WebApiFacturacion\obj\Debug\netcoreapp2.0\WebApiFacturacion.csprojResolveAssemblyReference.cache
