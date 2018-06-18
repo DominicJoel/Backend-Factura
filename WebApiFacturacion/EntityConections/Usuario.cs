@@ -43,8 +43,6 @@ namespace WebApiFacturacion.EntityConections
             }
         } 
 
-
-
     }
 
 }

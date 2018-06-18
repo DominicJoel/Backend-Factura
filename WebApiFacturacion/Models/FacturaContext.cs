@@ -40,13 +40,13 @@ namespace WebApiFacturacion.Models
                 entity.Property(e => e.CedulaClientes)
                     .IsRequired()
                     .HasColumnName("Cedula_Clientes")
-                    .HasColumnType("char(13)");
+                    .HasColumnType("varchar(13)");
 
-                entity.Property(e => e.Ciudad).HasColumnType("char(25)");
+                entity.Property(e => e.Ciudad).HasColumnType("varchar(25)");
 
                 entity.Property(e => e.Correo)
                     .IsRequired()
-                    .HasColumnType("nchar(40)");
+                    .HasColumnType("varchar(40)");
 
                 entity.Property(e => e.Dirreccion)
                     .HasMaxLength(150)
@@ -58,25 +58,25 @@ namespace WebApiFacturacion.Models
 
                 entity.Property(e => e.Nombre)
                     .IsRequired()
-                    .HasColumnType("char(25)");
+                    .HasColumnType("varchar(25)");
 
                 entity.Property(e => e.NombreEmpresa)
                     .HasColumnName("Nombre_Empresa")
-                    .HasColumnType("char(40)");
+                    .HasColumnType("varchar(40)");
 
                 entity.Property(e => e.Pais)
                     .IsRequired()
-                    .HasColumnType("char(30)");
+                    .HasColumnType("varchar(30)");
 
                 entity.Property(e => e.SitioWebEmpresa)
                     .HasColumnName("Sitio_Web_Empresa")
-                    .HasColumnType("nchar(40)");
+                    .HasColumnType("varchar(40)");
 
-                entity.Property(e => e.Telefono).HasColumnType("char(12)");
+                entity.Property(e => e.Telefono).HasColumnType("varchar(12)");
 
                 entity.Property(e => e.TelefonoEmpresa)
                     .HasColumnName("Telefono_Empresa")
-                    .HasColumnType("char(12)");
+                    .HasColumnType("varchar(12)");
             });
 
             modelBuilder.Entity<CodigoCompras>(entity =>
@@ -139,17 +139,17 @@ namespace WebApiFacturacion.Models
 
                 entity.Property(e => e.Calle)
                     .IsRequired()
-                    .HasColumnType("char(40)");
+                    .HasColumnType("varchar(40)");
 
                 entity.Property(e => e.Ciudad)
                     .IsRequired()
-                    .HasColumnType("char(25)");
+                    .HasColumnType("varchar(25)");
 
                 entity.Property(e => e.CodigoPostal).HasColumnName("Codigo_Postal");
 
                 entity.Property(e => e.Correo)
                     .IsRequired()
-                    .HasColumnType("nchar(40)");
+                    .HasColumnType("varchar(40)");
 
                 entity.Property(e => e.Logo)
                     .HasMaxLength(45)
@@ -163,13 +163,13 @@ namespace WebApiFacturacion.Models
                 entity.Property(e => e.Pais)
                     .IsRequired()
                     .HasColumnName("pais")
-                    .HasColumnType("char(20)");
+                    .HasColumnType("varchar(20)");
 
                 entity.Property(e => e.Region)
                     .IsRequired()
-                    .HasColumnType("char(30)");
+                    .HasColumnType("varchar(30)");
 
-                entity.Property(e => e.Telefono).HasColumnType("char(12)");
+                entity.Property(e => e.Telefono).HasColumnType("varchar(12)");
             });
 
             modelBuilder.Entity<Fabricantes>(entity =>
@@ -252,11 +252,11 @@ namespace WebApiFacturacion.Models
 
                 entity.Property(e => e.Modelo)
                     .IsRequired()
-                    .HasColumnType("char(10)");
+                    .HasColumnType("varchar(10)");
 
                 entity.Property(e => e.Nombre)
                     .IsRequired()
-                    .HasColumnType("char(25)");
+                    .HasColumnType("varchar(25)");
 
                 entity.Property(e => e.Precio).HasColumnType("money");
 
@@ -276,18 +276,18 @@ namespace WebApiFacturacion.Models
 
                 entity.Property(e => e.Apellido)
                     .IsRequired()
-                    .HasColumnType("char(30)");
+                    .HasColumnType("varchar(30)");
 
                 entity.Property(e => e.CedulaProveedor)
                     .IsRequired()
                     .HasColumnName("Cedula_Proveedor")
-                    .HasColumnType("char(13)");
+                    .HasColumnType("varchar(13)");
 
-                entity.Property(e => e.Ciudad).HasColumnType("char(25)");
+                entity.Property(e => e.Ciudad).HasColumnType("varchar(25)");
 
                 entity.Property(e => e.Correo)
                     .IsRequired()
-                    .HasColumnType("nchar(40)");
+                    .HasColumnType("varchar(40)");
 
                 entity.Property(e => e.Dirreccion)
                     .HasMaxLength(150)
@@ -299,25 +299,25 @@ namespace WebApiFacturacion.Models
 
                 entity.Property(e => e.Nombre)
                     .IsRequired()
-                    .HasColumnType("char(25)");
+                    .HasColumnType("varchar(25)");
 
                 entity.Property(e => e.NombreEmpresa)
                     .HasColumnName("Nombre_Empresa")
-                    .HasColumnType("char(40)");
+                    .HasColumnType("varchar(40)");
 
                 entity.Property(e => e.Pais)
                     .IsRequired()
-                    .HasColumnType("char(30)");
+                    .HasColumnType("varchar(30)");
 
                 entity.Property(e => e.SitioWebEmpresa)
                     .HasColumnName("Sitio_Web_Empresa")
-                    .HasColumnType("nchar(40)");
+                    .HasColumnType("varchar(40)");
 
                 entity.Property(e => e.Telefono).HasColumnType("char(12)");
 
                 entity.Property(e => e.TelefonoEmpresa)
                     .HasColumnName("Telefono_Empresa")
-                    .HasColumnType("char(12)");
+                    .HasColumnType("varchar(12)");
             });
 
             modelBuilder.Entity<Roles>(entity =>
