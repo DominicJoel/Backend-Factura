@@ -28,13 +28,6 @@ namespace WebApiFacturacionController
         }
 
 
-        //// GET: api/Clientes/5
-        //[HttpGet("{id}", Name = "Get")]
-        //public string Get(int id)
-        //{
-        //    return "value";
-        //}
-
         // POST: api/Clientes
         [HttpPost]
         [DisableCors]
@@ -57,7 +50,7 @@ namespace WebApiFacturacionController
             return CreatedAtAction("Get", value);
         }
 
-        // DELETE: api/ApiWithActions/5
+        // DELETE: Clientes
         [HttpDelete("{id}")]
         [Route("api/Clientes")]
         public IActionResult Delete(int id)
@@ -108,7 +101,26 @@ namespace WebApiFacturacionController
             return CreatedAtAction("Get", value);
         }
 
-        
+
+        // DELETE: Proveedores
+        [HttpDelete("{id}")]
+        [Route("api/Proveedor")]
+        public IActionResult DeleteProveedor(int id)
+        {
+            using (var context = new FacturaContext())
+            {
+                try
+                {
+                    context.Proveedor.FromSql($" exec Eliminar_Proveedor {id}").FirstOrDefault();
+                }
+                catch (Exception e)
+                {
+                    return BadRequest(e.Message);
+                }
+            }
+
+            return Ok(id);
+        }
 
     }
 }

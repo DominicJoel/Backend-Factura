@@ -258,7 +258,7 @@ namespace WebApiFacturacion.Models
                     .IsRequired()
                     .HasColumnType("varchar(25)");
 
-                entity.Property(e => e.Precio).HasColumnType("money");
+                entity.Property(e => e.Precio).HasColumnType("decimal");
 
                 entity.Property(e => e.Stock).HasColumnName("stock");
 
