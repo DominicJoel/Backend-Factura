@@ -262,6 +262,8 @@ namespace WebApiFacturacion.Models
 
                 entity.Property(e => e.Stock).HasColumnName("stock");
 
+                entity.Property(e => e.PhotoUrl).HasColumnName("photoUrl");
+
                 entity.HasOne(d => d.IdFabricanteNavigation)
                     .WithMany(p => p.Productos)
                     .HasForeignKey(d => d.IdFabricante)

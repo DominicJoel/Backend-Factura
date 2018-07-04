@@ -13,6 +13,7 @@ namespace WebApiFacturacion.Models
         public string Estado { get; set; }
         public int Stock { get; set; }
         public string Modelo { get; set; }
+        public string PhotoUrl { get; set; }
 
         public Fabricantes IdFabricanteNavigation { get; set; }
     }
