@@ -203,21 +203,27 @@ namespace WebApiFacturacion.Models
 
                 entity.Property(e => e.IdFactura).HasColumnName("Id_Factura");
 
+                entity.Property(e => e.IdProductos).HasColumnName("Id_Productos");
+
+                entity.Property(e => e.PrecioTotal)
+                   .HasColumnName("Cantidad")
+                   .HasColumnType("int");
+
                 entity.Property(e => e.Iva)
                     .HasColumnName("iva")
-                    .HasColumnType("money");
+                    .HasColumnType("decimal");
 
                 entity.Property(e => e.Neto)
                     .HasColumnName("neto")
-                    .HasColumnType("money");
+                    .HasColumnType("decimal");
 
                 entity.Property(e => e.PrecioTotal)
                     .HasColumnName("Precio_Total")
-                    .HasColumnType("money");
+                    .HasColumnType("decimal");
 
                 entity.Property(e => e.Vendedor)
                     .IsRequired()
-                    .HasColumnType("char(25)");
+                    .HasColumnType("varchar(25)");
 
                 entity.HasOne(d => d.IdClienteNavigation)
                     .WithMany(p => p.FacturaLista)
@@ -228,6 +234,11 @@ namespace WebApiFacturacion.Models
                     .WithMany(p => p.FacturaLista)
                     .HasForeignKey(d => d.IdFactura)
                     .HasConstraintName("FK_Id_Factura");
+
+                entity.HasOne(d => d.IdProductoNavigation)
+                    .WithMany(p => p.FacturaLista)
+                    .HasForeignKey(d => d.IdProductos)
+                    .HasConstraintName("FK_Id_Productos");
             });
 
             modelBuilder.Entity<Productos>(entity =>

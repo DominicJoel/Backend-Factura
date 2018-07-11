@@ -7,6 +7,8 @@ namespace WebApiFacturacion.Models
     {
         public int IdFactura { get; set; }
         public int IdCliente { get; set; }
+        public int IdProductos { get; set; }
+        public int Cantidad { get; set; }
         public string Vendedor { get; set; }
         public decimal Neto { get; set; }
         public decimal Iva { get; set; }
@@ -15,5 +17,7 @@ namespace WebApiFacturacion.Models
 
         public Clientes IdClienteNavigation { get; set; }
         public CodigoFactura IdFacturaNavigation { get; set; }
+        public Productos IdProductoNavigation { get;  set; }
+        
     }
 }

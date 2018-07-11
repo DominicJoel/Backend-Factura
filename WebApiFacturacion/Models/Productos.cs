@@ -16,5 +16,6 @@ namespace WebApiFacturacion.Models
         public string PhotoUrl { get; set; }
 
         public Fabricantes IdFabricanteNavigation { get; set; }
+        public IEnumerable<FacturaLista> FacturaLista { get; internal set; }
     }
 }
