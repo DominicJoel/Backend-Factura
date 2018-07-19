@@ -18,6 +18,17 @@ namespace WebApiFacturacion.EntityConections
             }
         }
 
+        public IList<Productos> ObtenerProductosActivo()
+        {
+            IList<Productos> producto;
+            using (var context = new FacturaContext())
+            {
+                string estado = "a";
+                producto = context.Productos.Where( c => c.Estado == estado).ToList();
+                return producto;
+            }
+        }
+
         public Productos ObtenerUnProducto(int id)
         {
             Productos producto;

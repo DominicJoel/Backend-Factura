@@ -25,7 +25,18 @@ namespace WebApiFacturacionController
             return Ok(fabricante);
         }
 
-        
+
+        // GET: api/Fabricantes/activos
+        [HttpGet]
+        [Route("api/Fabricantes/activos")]
+        public IActionResult GetFabricantesActivos()
+        {
+            IList<Fabricantes> fabricante = new List<Fabricantes>();
+            fabricante = db.ObtenerFabricantesActivos();
+            return Ok(fabricante);
+        }
+
+
         // POST: api/Fabricantes
         [HttpPost]
         [Route("api/Fabricantes")]

@@ -90,7 +90,7 @@ namespace WebApiFacturacionController
         [HttpPost]
         [Route("api/Factura/ListaFacturaId")]
         public IActionResult GetListaFacturaId([FromBody]CodigoFactura value)
-        {
+        { 
             using (var context = new FacturaContext())
             {
                 IList<FacturaLista> Lista = new List<FacturaLista>();
@@ -107,6 +107,34 @@ namespace WebApiFacturacionController
                 return Ok(Lista);
             }
         }
+
+
+
+        //Obtiene Una Factura Relacionada
+        [HttpPost]
+        [Route("api/Factura/FacturaUnica")]
+        public IActionResult GetFacturaInfo([FromBody]CodigoFactura value)
+        {
+            IList<FacturasProcesadas> listaFactura = new List<FacturasProcesadas>();//Facturas Procesadas es Un modelo que se tuvo que crear para obtener los datos de el procedimiento con relacion
+            using (var context = new FacturaContext())
+            {
+                try
+                {
+                    listaFactura = context.LoadStoredProc("dbo.FacturasProcesadasUnica")// Nombre del Procedimiento
+                                          .WithSqlParam("@idFactura",value.IdFactura)
+                                          .ExecuteStoredProc<FacturasProcesadas>();
+
+                }
+                catch (Exception e)
+                {
+
+                    return BadRequest(e.Message);
+                }
+
+                return Ok(listaFactura);
+            }
+        }
+
 
 
         // POST: api/Factura

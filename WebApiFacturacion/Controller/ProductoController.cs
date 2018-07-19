@@ -48,6 +48,17 @@ namespace WebApiFacturacionController
 
         }
 
+        // GET: api/Producto
+        [HttpGet]
+        [Route("api/Productos/activos")]
+        public IActionResult GetProductosActivos()
+        {
+            IList<Productos> productos = new List<Productos>();
+            productos = db.ObtenerProductosActivo();
+            return Ok(productos);
+
+        }
+
         // GET: api/Producto/5
         [HttpGet("{id}", Name = "GetU")]
         [Route("api/Productos/{id}")]//Le indicamos que recibira un parametro para la busqueda

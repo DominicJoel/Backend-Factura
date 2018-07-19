@@ -18,6 +18,8 @@ namespace WebApiFacturacion.EntityConections
                 return clientes;
             }
         }
+
+
         public IList<Proveedor> ObtenerProveedor()
         {
             IList<Proveedor> proveedor;
@@ -27,8 +29,6 @@ namespace WebApiFacturacion.EntityConections
                 return proveedor;
             }
         }
-
-
 
     }
 }

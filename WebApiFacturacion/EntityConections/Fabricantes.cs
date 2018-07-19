@@ -17,5 +17,16 @@ namespace WebApiFacturacion.EntityConections
                 return fabricantes;
             }
         }
+
+        public IList<Fabricantes> ObtenerFabricantesActivos()
+        {
+            IList<Fabricantes> fabricantes;
+            using (var context = new FacturaContext())
+            {
+                string estado = "a"; 
+                fabricantes = context.Fabricantes.Where(fabi => fabi.Estado == estado).ToList();
+                return fabricantes;
+            }
+        }
     }
 }
