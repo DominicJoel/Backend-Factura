@@ -57,7 +57,6 @@ namespace WebApiFacturacionController
         }
     
 
-
     // DELETE: api/Fabricantes/5
         [HttpDelete("{id}")]
         [Route("api/Fabricantes")]
@@ -74,9 +73,7 @@ namespace WebApiFacturacionController
                     return BadRequest(e.Message);
                 }
             }
-
             return Ok(id);
-
         }
     }
 }

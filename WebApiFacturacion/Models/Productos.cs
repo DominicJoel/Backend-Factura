@@ -5,6 +5,8 @@ namespace WebApiFacturacion.Models
 {
     public partial class Productos
     {
+        
+
         public int IdProductos { get; set; }
         public int IdFabricante { get; set; }
         public string Nombre { get; set; }
@@ -17,5 +19,6 @@ namespace WebApiFacturacion.Models
 
         public Fabricantes IdFabricanteNavigation { get; set; }
         public IEnumerable<FacturaLista> FacturaLista { get; internal set; }
+        public IEnumerable<ComprasLista> ComprasLista { get; internal set; }
     }
 }

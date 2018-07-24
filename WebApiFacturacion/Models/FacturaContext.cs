@@ -103,19 +103,25 @@ namespace WebApiFacturacion.Models
 
                 entity.Property(e => e.IdCompra).HasColumnName("Id_Compra");
 
+                entity.Property(e => e.IdProductos).HasColumnName("Id_Productos");
+
                 entity.Property(e => e.IdProveedor).HasColumnName("Id_Proveedor");
 
                 entity.Property(e => e.Iva)
                     .HasColumnName("iva")
-                    .HasColumnType("money");
+                    .HasColumnType("decimal");
 
                 entity.Property(e => e.Neto)
                     .HasColumnName("neto")
-                    .HasColumnType("money");
+                    .HasColumnType("decimal");
 
                 entity.Property(e => e.PrecioTotal)
                     .HasColumnName("Precio_Total")
-                    .HasColumnType("money");
+                    .HasColumnType("decimal");
+
+                entity.Property(e => e.Cantidad)
+                 .HasColumnName("Cantidad")
+                 .HasColumnType("int");
 
                 entity.HasOne(d => d.IdCompraNavigation)
                     .WithMany(p => p.ComprasLista)
@@ -127,6 +133,12 @@ namespace WebApiFacturacion.Models
                     .WithMany(p => p.ComprasLista)
                     .HasForeignKey(d => d.IdProveedor)
                     .HasConstraintName("FK_Id_Proveedor");
+
+                entity.HasOne(d => d.IdProductoNavigation)
+                      .WithMany(p => p.ComprasLista)
+                      .HasForeignKey(d => d.IdProductos)
+                      .OnDelete(DeleteBehavior.Cascade)
+                     .HasConstraintName("FK_Id_Productos_Compra");
             });
 
             modelBuilder.Entity<Empresa>(entity =>
@@ -205,7 +217,7 @@ namespace WebApiFacturacion.Models
 
                 entity.Property(e => e.IdProductos).HasColumnName("Id_Productos");
 
-                entity.Property(e => e.PrecioTotal)
+                entity.Property(e => e.Cantidad)
                    .HasColumnName("Cantidad")
                    .HasColumnType("int");
 
