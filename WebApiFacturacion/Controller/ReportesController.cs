@@ -107,7 +107,7 @@ namespace WebApiFacturacionController
             }
         }
 
-        // DELETE: api/ApiWithActions/5
+        // Get: api/Reportes/cantidadClientes
         [HttpGet]
         [Route("api/Reportes/cantidadClientes")]
         public IActionResult CantidadCliente()
@@ -118,6 +118,28 @@ namespace WebApiFacturacionController
                 try
                 {
                     cantidad = context.LoadStoredProc("dbo.cantidadClientes")// Nombre del Procedimiento
+                                                   .ExecuteStoredProc<CantidadClientes>();
+                }
+                catch (Exception e)
+                {
+                    return BadRequest(e.Message);
+                }
+            }
+
+            return Ok(cantidad);
+        }
+
+        /// Get: api/Reportes/cantidadProductos
+        [HttpGet]
+        [Route("api/Reportes/cantidadProductos")]
+        public IActionResult CantidadProducto()
+        {
+            IList<CantidadClientes> cantidad = new List<CantidadClientes>();//Facturas Procesadas es Un modelo que se tuvo que crear para obtener los datos de el procedimiento con relacion
+            using (var context = new FacturaContext())
+            {
+                try
+                {
+                    cantidad = context.LoadStoredProc("dbo.cantidadProductos")// Nombre del Procedimiento
                                                    .ExecuteStoredProc<CantidadClientes>();
                 }
                 catch (Exception e)
